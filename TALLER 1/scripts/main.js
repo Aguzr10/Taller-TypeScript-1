@@ -9,7 +9,7 @@ function renderSeriesInTable(series) {
     });
     var average = getAverageSeasons(series);
     var trAvg = document.createElement("tr");
-    trAvg.style.backgroundColor = "white";
+    trAvg.classList.add("avg-row");
     trAvg.innerHTML = "\n    <td colspan=\"4\" style=\"text-align: left; font-weight: normal;\">\n      Seasons average: ".concat(Math.round(average), "\n    </td>");
     seriesTbody.appendChild(trAvg);
 }

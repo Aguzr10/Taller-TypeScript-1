@@ -5,7 +5,6 @@ const seriesTbody: HTMLElement = document.getElementById("series")!;
 renderSeriesInTable(series);
 
 function renderSeriesInTable(series: any[]): void {
-  
   series.forEach(s => {
     const trElement = document.createElement("tr");
     trElement.innerHTML = `
@@ -16,10 +15,9 @@ function renderSeriesInTable(series: any[]): void {
     seriesTbody.appendChild(trElement);
   });
 
-  
   const average = getAverageSeasons(series);
   const trAvg = document.createElement("tr");
-  trAvg.style.backgroundColor = "white";
+  trAvg.classList.add("avg-row");
   trAvg.innerHTML = `
     <td colspan="4" style="text-align: left; font-weight: normal;">
       Seasons average: ${Math.round(average)}
